@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-ip-address",     "homepage": "https://github.com/npmtest/node-npmtest-ip-address",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-ip-address.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [ip-address (v5.8.8)](https://github.com/beaugunderson/ip-address#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-ip-address.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-ip-address) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-ip-address.svg)](https://travis-ci.org/npmtest/node-npmtest-ip-address)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-ip-address",
+    "keywords": [
+        "coverage",
+        "test",
+        "ip-address"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_ip_address.js",
+    "name": "npmtest-ip-address",
+    "nameAlias": "npmtest_ip_address",
+    "nameOriginal": "npmtest-ip-address",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-ip-address.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "2017.4.23"
+}
